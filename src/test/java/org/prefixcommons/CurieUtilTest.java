@@ -80,7 +80,7 @@ public class CurieUtilTest {
         is(Optional.of("FIX:foo")));
     assertThat(curieUtil.getCurie("http://purl.obolibrary.org/obo/XAO_foo"),
         is(Optional.of("XAO:foo")));
-    assertThat(curieUtil.getCurie("http://purl.obolibrary.org/none_foo"), is(Optional.absent()));
+    assertThat(curieUtil.getCurie("http://purl.obolibrary.org/none_foo").isPresent(), is(false));
     assertThat(curieUtil.getIri("NONE:foo").isPresent(), is(false));
     assertThat(curieUtil.getIri("FIX:foo"),
         is(Optional.of("http://purl.obolibrary.org/obo/FIX_foo")));
