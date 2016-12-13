@@ -44,7 +44,7 @@ public class Trie {
   }
 
   /**
-   * @param input
+   * @param input The input to process.
    * @return the longest matching prefix
    */
   public String getMatchingPrefix(String input) {

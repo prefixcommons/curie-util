@@ -69,7 +69,7 @@ public class CurieUtil {
   /***
    * Expand a CURIE prefix to the corresponding IRI prefix.
    * 
-   * @param curiePrefix
+   * @param curiePrefix The curiePrefix to expand.
    * @return mapped IRI prefix
    */
   public String getExpansion(String curiePrefix) {
@@ -79,7 +79,7 @@ public class CurieUtil {
   /***
    * Returns the CURIE of an IRI, if mapped.
    * 
-   * @param iri
+   * @param iri The iri to compact.
    * @return An {@link Optional} CURIE
    */
   public Optional<String> getCurie(String iri) {
@@ -96,7 +96,7 @@ public class CurieUtil {
   /***
    * Expands a CURIE to a full IRI, if mapped.
    * 
-   * @param curie
+   * @param curie The curie to expand.
    * @return an {@link Optional} IRI
    */
   public Optional<String> getIri(String curie) {
