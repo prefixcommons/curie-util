@@ -5,6 +5,16 @@ Java utility library to translate CURIEs to IRIs and vice-versa.
 
 # Usage
 
+Add the dependency:
+
+```xml
+<dependency>
+    <groupId>org.prefixcommons</groupId>
+    <artifactId>curie-util</artifactId>
+    <version>0.0.1</version>
+</dependency
+```
+
 ## Create the CurieUtil object
 
 ### From a java map object:
