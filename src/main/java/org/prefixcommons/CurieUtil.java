@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
 
 import org.prefixcommons.trie.Trie;
 
 import com.github.jsonldjava.core.Context;
 import com.github.jsonldjava.utils.JsonUtils;
-import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableBiMap;
 
 
@@ -85,7 +85,7 @@ public class CurieUtil {
   public Optional<String> getCurie(String iri) {
     String prefix = trie.getMatchingPrefix(iri);
     if (prefix.equals("")) {
-      return Optional.absent();
+      return Optional.empty();
     } else {
       String curiePrefix = curieMap.inverse().get(prefix);
       return Optional
@@ -108,7 +108,7 @@ public class CurieUtil {
             String.format("%s%s", curieMap.get(prefix), curie.substring(curie.indexOf(':') + 1)));
       }
     }
-    return Optional.absent();
+    return Optional.empty();
   }
 
   /***

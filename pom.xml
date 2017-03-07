@@ -22,7 +22,7 @@
 			<name>Jeremy Nguyen Xuan</name>
 			<email>jnguyenxuan@lbl.gov</email>
 			<organization>Monarch Initiative</organization>
-			<organizationUrl>http://monarchinitiative.org</organizationUrl>
+			<organizationUrl>https://monarchinitiative.org</organizationUrl>
 		</developer>
 	</developers>
 
@@ -55,12 +55,12 @@
 		<dependency>
 			<groupId>com.github.jsonld-java</groupId>
 			<artifactId>jsonld-java</artifactId>
-			<version>0.8.3</version>
+			<version>0.10.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>20.0</version>
+			<version>21.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
