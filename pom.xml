@@ -5,7 +5,7 @@
 	<groupId>org.prefixcommons</groupId>
 	<artifactId>curie-util</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>curie-util</name>
 	<description>Java utility library to translate CURIEs to IRIs and vice-versa.</description>
 	<url>http://prefixcommons.org</url>
