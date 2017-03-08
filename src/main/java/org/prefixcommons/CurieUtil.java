@@ -88,8 +88,7 @@ public class CurieUtil {
       return Optional.empty();
     } else {
       String curiePrefix = curieMap.inverse().get(prefix);
-      return Optional
-          .of(String.format("%s:%s", curiePrefix, iri.substring(prefix.length(), iri.length())));
+      return Optional.of(curiePrefix + ":" + iri.substring(prefix.length(), iri.length()));
     }
   }
 
@@ -104,8 +103,7 @@ public class CurieUtil {
     if (parts.length > 1) {
       String prefix = parts[0];
       if (curieMap.containsKey(prefix)) {
-        return Optional.of(
-            String.format("%s%s", curieMap.get(prefix), curie.substring(curie.indexOf(':') + 1)));
+        return Optional.of(curieMap.get(prefix) + curie.substring(curie.indexOf(':') + 1));
       }
     }
     return Optional.empty();
