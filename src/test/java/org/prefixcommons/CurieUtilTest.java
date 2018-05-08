@@ -25,6 +25,8 @@ public class CurieUtilTest {
     map.put("B", "http://x.org/B_");
     map.put("CC", "http://x.org/C_C");
     map.put("C", "http://x.org/C_");
+    map.put("OBO", "http://purl.obolibrary.org/obo/");
+    map.put("GO", "http://purl.obolibrary.org/obo/GO_");
     util = new CurieUtil(map);
   }
 
@@ -66,6 +68,22 @@ public class CurieUtilTest {
   @Test
   public void curie_canBeDefinedInAnyOrder() {
     assertThat(util.getCurie("http://x.org/C_Chello"), is(Optional.of("CC:hello")));
+  }
+
+  
+  @Test
+  public void curie_isShortest() {
+    assertThat(util.getCurie("http://purl.obolibrary.org/obo/GO_0008150"), is(Optional.of("GO:0008150")));
+  }
+  
+  @Test
+  public void curie_oboTest1() {
+    assertThat(util.getIri("GO:0008150").get(), is("http://purl.obolibrary.org/obo/GO_0008150"));
+  }
+  
+  @Test
+  public void curie_oboTest2() {
+    assertThat(util.getIri("OBO:GO_0008150").get(), is("http://purl.obolibrary.org/obo/GO_0008150"));
   }
 
   @Test
