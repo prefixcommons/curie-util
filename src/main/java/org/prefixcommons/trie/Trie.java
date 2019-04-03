@@ -1,6 +1,6 @@
 package org.prefixcommons.trie;
 
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Data structure specific for characters, to efficiently resolve IRI prefixes to CURIEs prefixes.
@@ -25,7 +25,7 @@ public class Trie {
 
     // Traverse through all characters of given word
     for (int level = 0; level < length; level++) {
-      HashMap<Character, TrieNode> child = crawl.getChildren();
+      Map<Character, TrieNode> child = crawl.getChildren();
       char ch = word.charAt(level);
 
       // If there is already a child for current character of given word
@@ -62,7 +62,7 @@ public class Trie {
       char ch = input.charAt(level);
 
       // HashMap of current Trie node to traverse down
-      HashMap<Character, TrieNode> child = crawl.getChildren();
+      Map<Character, TrieNode> child = crawl.getChildren();
 
       // See if there is a Trie edge for the current character
       if (child.containsKey(ch)) {
