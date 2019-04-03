@@ -1,6 +1,6 @@
 package org.prefixcommons.trie;
 
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Data structure specific for characters, to efficiently resolve IRI prefixes to CURIEs prefixes.
@@ -25,7 +25,7 @@ public class Trie {
 
     // Traverse through all characters of given word
     for (int level = 0; level < length; level++) {
-      HashMap<Character, TrieNode> child = crawl.getChildren();
+      Map<Character, TrieNode> child = crawl.getChildren();
       char ch = word.charAt(level);
 
       // If there is already a child for current character of given word
@@ -48,41 +48,43 @@ public class Trie {
    * @return the longest matching prefix
    */
   public String getMatchingPrefix(String input) {
-    String result = ""; // Initialize resultant string
-    int length = input.length(); // Find length of the input string
+    StringBuilder result = new StringBuilder();
+    int length = input.length();
 
     // Initialize reference to traverse through Trie
     TrieNode crawl = root;
 
     // Iterate through all characters of input string 'str' and traverse
     // down the Trie
-    int level, prevMatch = 0;
-    for (level = 0; level < length; level++) {
+    int prevMatch = 0;
+    for (int level = 0; level < length; level++) {
       // Find current character of str
       char ch = input.charAt(level);
 
       // HashMap of current Trie node to traverse down
-      HashMap<Character, TrieNode> child = crawl.getChildren();
+      Map<Character, TrieNode> child = crawl.getChildren();
 
       // See if there is a Trie edge for the current character
       if (child.containsKey(ch)) {
-        result += ch; // Update result
+        result.append(ch); // Update result
         crawl = child.get(ch); // Update crawl to move down in Trie
 
         // If this is end of a word, then update prevMatch
-        if (crawl.isLeaf())
+        if (crawl.isLeaf()) {
           prevMatch = level + 1;
-      } else
+        }
+      } else {
         break;
+      }
     }
 
     // If the last processed character did not match end of a word,
     // return the previously matching prefix
-    if (!crawl.isLeaf())
+    if (!crawl.isLeaf()) {
       return result.substring(0, prevMatch);
-
-    else
-      return result;
+    } else {
+      return result.toString();
+    }
   }
 
 }
