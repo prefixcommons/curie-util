@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/prefixcommons/curie-util.svg?branch=master)](https://travis-ci.org/prefixcommons/curie-util)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.prefixcommons/curie-util/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.pprefixcommons/curie-util)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.prefixcommons/curie-util/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.prefixcommons/curie-util)
 [![Javadoc](https://javadoc-emblem.rhcloud.com/doc/org.prefixcommons/curie-util/badge.svg)](http://www.javadoc.io/doc/org.prefixcommons/curie-util)
 
 # curie-util
