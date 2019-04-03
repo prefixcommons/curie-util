@@ -50,6 +50,11 @@ public class CurieUtilTest {
     assertThat(util.getIri(":foo").get(), is("http://x.org/foo"));
   }
 
+  @Test(expected = NullPointerException.class)
+  public void throwsNullPointerWithNullInput() {
+    util.getIri(null);
+  }
+
   @Test
   public void curie_whenShortMappingIsPresent() {
     assertThat(util.getCurie("http://x.org/foo"), is(Optional.of(":foo")));

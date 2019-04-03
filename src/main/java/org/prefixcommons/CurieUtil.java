@@ -1,12 +1,11 @@
 package org.prefixcommons;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.prefixcommons.trie.Trie;
@@ -17,7 +16,7 @@ import com.google.common.collect.ImmutableBiMap;
 
 
 public class CurieUtil {
-  final private Trie trie;
+  private final Trie trie;
   private final ImmutableBiMap<String, String> curieMap;
 
   public CurieUtil(Map<String, String> mapping) {
@@ -107,7 +106,7 @@ public class CurieUtil {
    * @return an {@link Optional} IRI
    */
   public Optional<String> getIri(String curie) {
-    String[] parts = checkNotNull(curie).split(":");
+    String[] parts = Objects.requireNonNull(curie).split(":");
     if (parts.length > 1) {
       String prefix = parts[0];
       if (curieMap.containsKey(prefix)) {
