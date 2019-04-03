@@ -88,4 +88,9 @@ public class CurieUtilTest {
         is(Optional.of("http://purl.obolibrary.org/obo/XAO_foo")));
   }
 
+  @Test
+  public void getIriPrefix() {
+    assertThat(util.getCuriePrefix("http://x.org/a_12345"), is(Optional.of("A")));
+    assertThat(util.getCuriePrefix("http://x.org/C_C12345"), is(Optional.of("CC")));
+  }
 }

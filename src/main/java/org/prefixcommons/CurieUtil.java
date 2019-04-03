@@ -92,6 +92,14 @@ public class CurieUtil {
     }
   }
 
+  public Optional<String> getCuriePrefix(String iri) {
+    String prefix = trie.getMatchingPrefix(iri);
+    if (prefix.equals("")) {
+      return Optional.empty();
+    }
+    return Optional.of(curieMap.inverse().get(prefix));
+  }
+
   /***
    * Expands a CURIE to a full IRI, if mapped.
    * 
