@@ -56,8 +56,8 @@ public class Trie {
 
     // Iterate through all characters of input string 'str' and traverse
     // down the Trie
-    int level, prevMatch = 0;
-    for (level = 0; level < length; level++) {
+    int prevMatch = 0;
+    for (int level = 0; level < length; level++) {
       // Find current character of str
       char ch = input.charAt(level);
 
@@ -70,10 +70,12 @@ public class Trie {
         crawl = child.get(ch); // Update crawl to move down in Trie
 
         // If this is end of a word, then update prevMatch
-        if (crawl.isLeaf())
+        if (crawl.isLeaf()) {
           prevMatch = level + 1;
-      } else
+        }
+      } else {
         break;
+      }
     }
 
     // If the last processed character did not match end of a word,
